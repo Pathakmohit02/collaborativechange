@@ -1,0 +1,273 @@
+
+.hero-section {
+  width: 100vw; /* Ensure full viewport width */
+  height: 94vh; /* Ensure full viewport height */
+  background-size: cover; /* Desktop background properties */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  z-index: 0;
+  color: #fff;
+  background-image: url("generated-image (11).png"); /* Desktop background image */
+  padding-left: 5%; /* Desktop left padding */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Overlay darkness */
+  z-index: 0; /* Above background image, below content */
+}
+
+.hero-responsive-image-wrapper {
+  display: none; /* Hidden on desktop */
+}
+
+.hero-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+  padding-left: 5%; /* Maintain desktop padding */
+  width: 100%; /* Take full width to allow centering on mobile */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+  max-width: 800px;
+  padding: 40px;
+  text-align: left;
+  background-color: transparent; /* No white background on desktop */
+}
+
+.hero-title-main {
+  font-size: 3.8em;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-weight: 800;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.hero-quote-main {
+  font-size: 1.5em;
+  color: #f0f0f0;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-style: italic;
+  text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-button-main {
+   background: #007b7f;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  text-shadow: none;
+}
+
+.hero-button-main:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 900px) {
+  .hero-section {
+    height: auto; /* Allow height to adjust based on content */
+    background-image: none; /* Remove background on responsive */
+    padding-left: 0; /* Remove desktop padding */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-section::before {
+    content: none; /* Remove overlay on responsive when background is separate */
+  }
+  .hero-responsive-image-wrapper {
+    display: block; /* Show image wrapper on responsive */
+    width: 100%;
+    height: 250px; /* Responsive height for image */
+    background-image: url("generated-image (11).png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+  }
+  .hero-content {
+    max-width: 90%;
+    padding: 30px;
+    text-align: center; /* Center text content */
+    background-color: white; /* White background for content on responsive */
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 20px auto; /* Center content with margin */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+    color: #333; /* Darker text color on white background */
+  }
+  .hero-title-main {
+    font-size: 2.5em; /* Adjusted font size for responsive */
+    margin-bottom: 15px;
+    color: #333; /* Darker text */
+    text-shadow: none; /* Remove text shadow */
+  }
+  .hero-quote-main {
+    font-size: 1.1em; /* Adjusted font size for responsive */
+    margin-bottom: 20px;
+    color: #555; /* Darker text */
+    text-shadow: none; /* Remove text shadow */
+  }
+  .hero-button-main {
+    padding: 12px 30px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-responsive-image-wrapper {
+    height: 200px;
+  }
+  .hero-content {
+    padding: 20px;
+  }
+  .hero-title-main {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  .hero-quote-main {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+  .hero-button-main {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-responsive-image-wrapper {
+    height: 150px;
+  }
+  .hero-content {
+    padding: 15px;
+    margin: 15px auto; /* Adjust margin for smaller screens */
+  }
+  .hero-title-main {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  .hero-quote-main {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  .hero-button-main {
+    padding: 8px 20px;
+    font-size: 0.9em;
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Larger font size for main title */
+  color: #ffffff; /* White color for better contrast */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Stronger text shadow */
+  line-height: 1.2; /* Adjust line height for multiline title */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #e0e0e0; /* Light grey for better contrast */
+  margin-bottom: 2.5rem; /* Space between subtitle and containers */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for contrast */
+}
+
+.hero-containers {
+  display: flex;
+  flex-wrap: wrap; /* Allow containers to wrap on smaller screens */
+  justify-content: center;
+  gap: 20px; /* Space between containers */
+  margin-top: 20px;
+}
+
+.hero-container-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background for containers */
+  border-radius: 12px;
+  padding: 20px;
+  width: 180px; /* Fixed width for containers */
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.hero-container-item:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly more visible on hover */
+}
+
+.container-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff; /* Blue color for numbers */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.container-text {
+  font-size: 1.1rem;
+  color: #ffffff; /* White text for contrast */
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.hero-quote {
+  font-size: 1.15rem;
+  color: #e0e0e0; /* Light grey for better contrast */
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add text shadow for contrast */
+}
+
+.btn button {
+  background-color: transparent;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add text shadow for contrast */
+}
+
+.btn button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly visible background on hover for feedback */
+  transform: translateY(-2px);
+}
+
+/* Ensure the Navbar has a high z-index to stay on top */
+.navbar {
+  z-index: 100; 
+}

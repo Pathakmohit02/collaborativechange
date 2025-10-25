@@ -1,0 +1,421 @@
+.about-section {
+  background-color: #fff;
+  padding: 4rem 0;
+}
+
+.about-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1100px; /* Fixed max-width for large screens */
+  width: 90%; /* Responsive width for most screens */
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(60, 108, 87, 0.08), 0 2px 4px rgba(60, 108, 87, 0.04);
+  overflow: hidden;
+}
+
+.about-photo-wrapper {
+  flex: 1; /* Allow to grow and shrink */
+  max-width: 400px; /* Max width for the image wrapper */
+  width: 38%; /* Initial width, will be overridden by media queries */
+  height: auto;
+  background: #e8f0ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+
+
+.about-photo {
+  width: 100%;
+  height: auto; /* Ensure height scales with width */
+  object-fit: cover;
+  border-radius: 0 0 28px 0;
+  display: block;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 0; /* Allow flex item to shrink below content size */
+  padding: 42px 42px 42px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-content h2 {
+  font-size: 2.1rem;
+  color: #385c48;
+  font-weight: 700;
+  margin-bottom: 20px;
+  overflow-wrap: break-word; /* Ensure text breaks and wraps */
+  word-break: break-all; /* Force breaking of long words */
+  max-width: 100%; /* Ensure it does not overflow its container */
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-content p {
+  color: #425c51;
+  font-size: 1.09rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  overflow-wrap: break-word; /* Ensure text breaks and wraps */
+  word-break: break-all; /* Force breaking of long words */
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+/* Styles for TextScramble component */
+.about-content .text-scramble {
+  font-size: 2.1rem; /* Default font size */
+  color: #385c48;
+  font-weight: 700;
+  margin-bottom: 20px;
+  overflow-wrap: break-word; /* Ensure text breaks and wraps */
+  word-break: break-all; /* Force breaking of long words */
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+/* Styles for TextShimmer component */
+.about-content .text-shimmer {
+  font-size: 1.09rem; /* Default font size */
+  color: #425c51;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  overflow-wrap: break-word; /* Ensure text breaks and wraps */
+  word-break: break-all; /* Force breaking of long words */
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+/* Styles for TextRoll component */
+.about-content .text-roll {
+  font-size: 1.09rem; /* Default font size */
+  color: #425c51;
+  line-height: 1.75;
+  overflow-wrap: break-word; /* Ensure text breaks and wraps */
+  word-break: break-all; /* Force breaking of long words */
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-photo-footer {
+  width: 100%;
+  padding: 18px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-doctor-name {
+  margin-bottom: 13px;
+  font-weight: 600;
+  font-size: 1.12rem;
+  color: #385c48;
+  letter-spacing: 0.1px;
+  word-wrap: break-word; /* Ensure text breaks and wraps */
+  text-align: center; /* Center text for better presentation */
+  overflow-wrap: break-word; /* Ensure text breaks and wraps */
+  word-break: break-all; /* Force breaking of long words */
+  max-width: 100%; /* Ensure it does not overflow its container */
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-photo-btn-group {
+  display: flex;
+  gap: 11px;
+}
+
+.about-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #4a8c75;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-btn:hover,
+.about-btn:focus {
+  background: #366356;
+}
+
+.about-btn-secondary {
+  background: #e7f5f1;
+  color: #225344;
+  border: 1px solid #b8ded5;
+  box-sizing: border-box;
+  white-space: normal; /* Ensure text wraps normally */
+}
+
+.about-btn-secondary:hover,
+.about-btn-secondary:focus {
+  background: #d2ebe5;
+}
+
+/* Media Queries */
+@media (max-width: 950px) {
+  .about-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    width: 95%; /* Adjust width for medium screens */
+    max-width: 600px; /* Max width for tablet-like screens */
+  }
+  .about-photo-wrapper {
+    width: 100%;
+    max-width: 400px; /* Constrain image width even when stacked */
+    height: 300px; /* Fixed height for image on medium screens */
+    border-radius: 18px 18px 0 0;
+  }
+  .about-photo {
+    height: 100%; /* Image fills its wrapper */
+    border-radius: 18px 18px 0 0;
+  }
+  .about-content {
+    padding: 2.5rem 1.8rem; /* Adjusted padding */
+    text-align: center;
+    min-width: 0; /* Ensure text content can shrink */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content p,
+  .about-content .text-shimmer,
+  .about-content .text-roll {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-doctor-name {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-photo-footer {
+    padding: 1rem 0 1.5rem 0;
+    width: 90%; /* Ensure footer takes more width for text wrapping */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-photo-btn-group {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.5rem;
+    width: 80%; /* Buttons take more width */
+  }
+  .about-btn {
+    width: 100%; /* Full width for stacked buttons */
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-btn-secondary {
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content .text-scramble {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 2rem 0;
+  }
+  .about-container {
+    border-radius: 10px;
+    width: 98%;
+    max-width: 380px; /* Max width for smaller phones */
+  }
+  .about-photo-wrapper {
+    height: 220px; /* Smaller height for phones */
+    border-radius: 10px 10px 0 0;
+  }
+  .about-photo {
+    border-radius: 10px 10px 0 0;
+  }
+  .about-content {
+    padding: 1.5rem 1.2rem; /* Adjusted padding */
+    min-width: 0; /* Ensure text content can shrink */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content p,
+  .about-content .text-shimmer,
+  .about-content .text-roll {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    word-wrap: break-word; /* Ensure text breaks and wraps */
+    text-align: center; /* Center text */
+    width: 100%; /* Take full width of parent */
+    max-width: 100%;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-doctor-name {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-photo-footer {
+    padding: 0.8rem 0 1rem 0;
+    width: 95%; /* Ensure footer takes more width for text wrapping */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-photo-btn-group {
+    width: 90%; /* Buttons take more width on small phones */
+  }
+  .about-btn {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-btn-secondary {
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content .text-scramble {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+}
+
+@media (max-width: 400px) {
+  .about-container {
+    width: 100%; /* Full width for very small screens */
+    border-radius: 0;
+  }
+  .about-photo-wrapper {
+    height: 180px;
+    border-radius: 0;
+  }
+  .about-photo {
+    border-radius: 0;
+  }
+  .about-content {
+    padding: 1rem 0.8rem; /* Adjusted padding */
+    min-width: 0; /* Ensure text content can shrink */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content h2 {
+    font-size: 1.1rem; /* Slightly reduced font size for very small screens */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content p,
+  .about-content .text-shimmer,
+  .about-content .text-roll {
+    font-size: 0.7rem; /* Slightly reduced font size for very small screens */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-doctor-name {
+    font-size: 0.7rem; /* Slightly reduced font size for very small screens */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-photo-footer {
+    padding: 0.6rem 0.8rem 0.8rem 0.8rem; /* Adjusted padding */
+    width: 100%; /* Ensure footer takes full width */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-btn {
+    font-size: 0.7rem; /* Slightly reduced font size for very small screens */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-btn-secondary {
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+  .about-content .text-scramble {
+    font-size: 1.1rem; /* Slightly reduced font size for very small screens */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Force breaking of long words */
+    box-sizing: border-box;
+    white-space: normal; /* Ensure text wraps normally */
+  }
+}
+
+
+
+
+

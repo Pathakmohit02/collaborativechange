@@ -1,0 +1,95 @@
+.carousel-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0; /* Add some vertical padding */
+}
+
+.carousel-video-group {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  max-width: 98vw;
+  flex-wrap: wrap; /* Allow videos to wrap on smaller screens */
+}
+
+.carousel-player {
+  width: 280px;
+  height: 180px;
+  border-radius: 12px;
+  background: #d7f3e7;
+  box-shadow: 0 4px 18px rgba(60, 80, 120, 0.08);
+}
+
+.carousel-arrow {
+  background: #fff;
+  border: none;
+  color: #184428;
+  font-size: 2.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(80, 80, 80, 0.11);
+  z-index: 2;
+}
+.carousel-arrow.left {
+  margin-right: 12px;
+}
+.carousel-arrow.right {
+  margin-left: 12px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 900px) {
+  .carousel-video-group {
+    width: 95%; /* Adjust width for medium screens */
+    gap: 15px; /* Reduce gap between videos */
+  }
+  .carousel-player {
+    width: 300px; /* Slightly larger for two columns */
+    height: 190px;
+  }
+  .carousel-arrow {
+    font-size: 2rem;
+    padding: 0.2rem 0.7rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel-container {
+    flex-direction: column; /* Stack arrows and videos vertically */
+    padding: 15px 0;
+  }
+  .carousel-video-group {
+    flex-direction: column; /* Stack videos vertically */
+    width: 90%;
+    max-width: 350px; /* Max width for single column */
+    gap: 15px;
+  }
+  .carousel-player {
+    width: 100%; /* Take full width of parent */
+    height: 200px;
+  }
+  .carousel-arrow.left {
+    margin: 0 0 15px 0; /* Position arrows above/below */
+  }
+  .carousel-arrow.right {
+    margin: 15px 0 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-player {
+    height: 160px; /* Smaller height for very small screens */
+  }
+  .carousel-arrow {
+    font-size: 1.8rem;
+    padding: 0.15rem 0.6rem;
+  }
+}
